@@ -1,0 +1,17 @@
+# Binaries for Go programs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+go-link-shortner
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+.env

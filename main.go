@@ -1,20 +1,21 @@
 package main
+
 import (
+	"github.com/gin-gonic/gin"
 	"net/http"
-    "github.com/gin-gonic/gin"
 )
 
-func main(){
-	r :=  gin.Default()
-	r.GET("/ping", func(c *gin.Context){
+func main() {
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
 			"message": "pong",
 		})
 	})
 
-	r.POST("/shorten", func(c *gin.Context){
-		
-        var req shortenRequestURL
+	r.POST("/shorten", func(c *gin.Context) {
+
+		var req shortenRequestURL
 
 		if err := c.ShouldBindJSON(&req); err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{
@@ -27,7 +28,7 @@ func main(){
 		shortCode := GenerateShortCode(shortCodeLength)
 
 		c.JSON(http.StatusOK, gin.H{
-			"short_url": shortCode,
+			"short_url":    shortCode,
 			"original_url": req.URL,
 		})
 	})

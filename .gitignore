@@ -4,7 +4,7 @@
 *.dll
 *.so
 *.dylib
-go-link-shortner
+schnellink
 
 # IDE / Editor specific files
 .vscode/
